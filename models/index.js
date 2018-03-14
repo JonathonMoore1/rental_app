@@ -1,4 +1,11 @@
 // Dependencies
+
+
+
+
+
+
+
 require('dotenv').config();
 var pw = process.env.MYSQL_PW;
 
