@@ -17,8 +17,8 @@ app.use(express.static('./app/public'));
 
 // Router
 // ========================
-require('./app/routes/api-routes.js')(app);
-require('./app/routes/html-routes.js');
+require('./app/routes/api-routes.js'); // (app);
+require('./app/routes/html-routes.js');// (app);
 
 // Listener
 // =======================
@@ -29,3 +29,6 @@ app.listen(function(err) {
   }
   console.log("***Listening on PORT: " + PORT);
 })
+
+// Some fancy Sequelize thing goes below here...
+//  ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
