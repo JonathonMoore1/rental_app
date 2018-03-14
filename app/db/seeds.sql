@@ -32,3 +32,19 @@ INSERT INTO entries
   "Two great canoes just begging to be used! I promise they won't sink. If you're planning a Boundry Waters trip, look no further!"
 );
 
+INSERT INTO entries
+(
+  item,
+  rate,
+  owner,
+  location,
+  category,
+  description
+) VALUES (
+  "Snowboard",
+  "$30/day",
+  "Chad",
+  "Aspen, CO",
+  "Skiing/Snowboarding",
+  "There’s freshies on the super-jib in Aspen, brah. My gear is SICK. Come check it out, gazers!"
+);
