@@ -3,6 +3,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
+var db = require('./models');
+
 // Express Configuration
 //======================
 var app = express();
@@ -17,18 +19,21 @@ app.use(express.static('./app/public'));
 
 // Router
 // ========================
-require('./app/routes/api-routes.js'); // (app);
-require('./app/routes/html-routes.js');// (app);
+// require('./app/routes/api-routes.js')(app);
+// require('./app/routes/html-routes.js')(app);
 
 // Listener
 // =======================
-app.listen(function(err) {
-  if (err) {
-    console.error("ERROR: " + stack.err);
-    return;
-  }
-  console.log("***Listening on PORT: " + PORT);
+db.sequelize.sync().then(function() {
+  app.listen(function(err) {
+    if (err) {
+      console.error("ERROR: " + stack.err);
+      return;
+    }
+    console.log("*** Listening on PORT: " + PORT + " ***");
+  })
 })
+
 
 // Some fancy Sequelize thing goes below here...
 //  ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
