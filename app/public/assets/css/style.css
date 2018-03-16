@@ -1,0 +1,13 @@
+* {
+	box
+}
+
+/*body {
+	background-image: url(images/winter.jpg), url(images/spring.jpg), url(images/summer.jpg), url("/images/fall.jpg");
+}*/
+
+#header {
+	background-color: black;
+	color: white;
+	font-weight: bold;
+}
