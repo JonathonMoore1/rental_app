@@ -1,0 +1,77 @@
+* {
+	box
+}
+
+body {
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-size: 50%, 50%, 50%, 50%;
+	background-attachment: fixed, fixed, fixed, fixed;
+	background-position: left top, right top, right bottom, left bottom;
+}
+
+.home {
+  background-image: url(images/winter.jpg), url(images/spring.jpg), url(images/summer.jpg), url(images/fall.jpg);
+}
+
+.owner {
+  background-image: url(images/fall.jpg), url(images/winter.jpg), url(images/spring.jpg), url(images/summer.jpg);
+}
+
+.renter {
+  background-image: url(images/summer.jpg), url(images/fall.jpg), url(images/winter.jpg), url(images/spring.jpg);
+}
+
+.jumbotron {
+	background-color: transparent;
+  color: white;
+  font-weight: bolder;
+  padding: 32px;
+  width: auto;
+  float: right;
+}
+
+
+.body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.card {
+  border-color: orangeRed;
+}
+
+.card-header {
+  background-color: orangeRed;
+  color: white;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: orangeRed;
+  border-color: orangeRed;
+  color: white;
+}
+
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+
+.footer,
+.push {
+  height: 50px;
+  color: white;
+}
+
+.page-footer {
+	font-color: #607d8b;
+}
