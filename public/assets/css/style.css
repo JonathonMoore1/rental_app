@@ -70,6 +70,7 @@ html, body {
 .push {
   height: 50px;
   color: white;
+  float: right;
 }
 
 .page-footer {
