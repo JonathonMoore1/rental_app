@@ -3,7 +3,7 @@ CREATE DATABASE rentalApp_db;
 
 USE rentalApp_db;
 
-CREATE TABLE entries
+CREATE TABLE Rentals
 (
   id INT NOT NULL AUTO_INCREMENT,
   item VARCHAR (255) NOT NULL,
