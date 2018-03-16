@@ -3,10 +3,19 @@ var rentals = require ("/models/renters.js");
 var rounter = express.Router();
 
 router.get("/", function(req, res) {
-	renters.all(function(data) {
-		coffee:data
 		res.render("index");
-	});
+});
+
+router.get("/renter", function(req, res) {
+	renters.all(function(data) {
+		renters.data;
+		res.render("renter")
+	});		
+});
+
+router.get("/owner", function(req,res) {
+	renters.data;
+	res.render("onwer";)
 });
 
 router.post("api/renters", function(req, res) {
