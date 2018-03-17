@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     location: DataTypes.STRING,
     category: DataTypes.STRING,
     imgURL: DataTypes.STRING,
-    description: DataTypes.TINYTEXT
+    description: DataTypes.TEXT
   }, {});
   Rentals.associate = function(models) {
     // associations can be defined here
