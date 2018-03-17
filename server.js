@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Access public files
-app.use(express.static('./app/public'));
+app.use(express.static('./public'));
 
 // Router
 // ========================
@@ -24,7 +24,7 @@ app.use(express.static('./app/public'));
 
 // Listener
 // =======================
-db.sequelize.sync().then(function() {
+// db.sequelize.sync().then(function() {
   app.listen(function(err) {
     if (err) {
       console.error("ERROR: " + stack.err);
@@ -32,7 +32,7 @@ db.sequelize.sync().then(function() {
     }
     console.log("*** Listening on PORT: " + PORT + " ***");
   })
-})
+// })
 
 
 // Some fancy Sequelize thing goes below here...
