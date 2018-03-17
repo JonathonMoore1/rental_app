@@ -20,8 +20,9 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Router
 // ========================
-require('./routes/api-routes.js');
-require('./routes/html-routes.js')(app);
+
+var routes = require('./controllers/rental_controller.js');
+app.use("/", routes);
 
 // Listener
 // =======================

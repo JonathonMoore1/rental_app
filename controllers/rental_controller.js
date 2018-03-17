@@ -1,9 +1,11 @@
-var express = requirew("express");
-var rentals = require ("./models/rentals_no_seq.js");
-var rounter = express.Router();
+var express = require("express");
+var rentals = require ("../models/rentals_no_seq.js");
+var router = express.Router();
 
 router.get("/", function(req, res) {
-		res.render("index");
+	console.log('In base routes')
+		//res.render("../public/html/home.html");
+		res.send('test')
 });
 
 router.get("/renter", function(req, res) {
@@ -15,7 +17,7 @@ router.get("/renter", function(req, res) {
 
 router.get("/owner", function(req,res) {
 	rentals.data;
-	res.render("onwer";)
+	res.render("onwer");
 });
 
 router.post("api/rentals", function(req, res) {
@@ -25,7 +27,7 @@ router.post("api/rentals", function(req, res) {
 		], function(result) {
 			res.json({id: result.insertId});
 		}
-	});
+	);
 });
 
 router.put("/api/rentals/:id", function(req, res) {
@@ -47,7 +49,7 @@ router.put("/api/rentals/:id", function(req, res) {
 	});
 });
 
-router.delete("/api/rentals/:id", function(req. res) {
+router.delete("/api/rentals/:id", function(req, res) {
 	var condition = "id = " + req.params.id;
 	rentals.delete(condition, function(result) {
 		if (result.affectedRows == 0) {
