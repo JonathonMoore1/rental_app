@@ -4,17 +4,22 @@
 	<meta charset="UTF-8">
 	
 	<title>Rental App</title>
+	<style>
+	.card {
+		margin : 5px;
+	}
+</style>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!-- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
 	<link rel="stylesheet" href="../assets/css/style.css" type="text/css">
 
 	<script src="https://use.fontawesome.com/0f296b3a6c.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
 
 </head>
 <body class="renter">
@@ -48,7 +53,7 @@
 					<div class="col-md-6">
 				    	<div class="form-group">
 						    <label for="exampleFormControlSelect1">Category</label>
-						    <select class="form-control" id="exampleFormControlSelect1">
+						    <select class="form-control" id="category">
 						      <option>1</option>
 						      <option>2</option>
 						      <option>3</option>
@@ -72,15 +77,24 @@
 				<div class="col-md-4">
 					<div class="form-group">
 					    <label for="dateNeeded">To: </label>
-					    <input type="date" class="form-control" id="day">
+					    <input type="date" class="form-control" id="daytwo">
 					 </div>
 				</div>
 			</div>
 			 <br>
-			 <button type="submit" class="btn btn-primary mb-2">Submit</button>
+			 <button id="submit" type="submit" class="btn btn-primary mb-2">Submit</button>
+			</form>
+			
 	  </div>
 
+	  
+	  
 	</div>
+	<br>
+	<div class="row">
+	  	<div class="col-md-12" id="results">
+	  	</div>
+	  </div>
 	</div>
 </div>
 
@@ -94,3 +108,41 @@
 		<p class="footer">© 2018 NoCK Enterprises</p>
 		</div>
 </footer>
+
+<script>
+$(document).ready(function() {
+
+	
+
+	$('#submit').on('click', function(e) {
+
+		var searchResults = {
+		item : $('#itemSearch').val().trim(),
+		category : $('#category').val().trim(),
+		location : $('#locationSearch').val().trim(),
+		dayFrom : $('#day').val().trim(),
+		dayTo : $('#daytwo').val().trim()
+
+		}
+
+		console.log(searchResults);
+
+		e.preventDefault();
+		var newImage = $("<div>");
+
+		newImage.addClass("card", "col-md-4");
+		newImage.html(searchResults.item + searchResults.category);
+		$('#results').append(newImage);
+	});
+});
+
+
+	// var creepInfoRow = $("<tr>");
+ //        var now = moment().format("HH:mm:ss");
+
+
+ //        creepInfoRow.html("<td>" + "<img class='history-profile' src='" + url + "'>" +  "<td>" + targetName + "</td>" + "<td>" + '<img class=history-profile src=' + impressionSummaryImage + ">" + "<td>" + creepIndex + "</td>" + "<td>" + now + "</td>");
+ //        $("tbody").prepend(creepInfoRow);
+ //        var historyTable = $(".table-content").html();
+
+</script>
