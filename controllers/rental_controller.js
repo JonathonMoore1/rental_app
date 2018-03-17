@@ -3,8 +3,12 @@ var rentals = require ("../models/rentals_no_seq.js");
 var router = express.Router();
 
 router.get("/", function(req, res) {
-		res.render("index");
-});		
+	rentals.selectAll(function(data) {
+		rentals:data
+		console.log(data);
+		res.render("home", data);
+	});		
+});
 
 router.get("/renter", function(req, res) {
 	rentals.all(function(data) {
