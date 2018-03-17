@@ -3,7 +3,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var db = require('./models');
+// var db = require('./models');
 
 // Express Configuration
 //======================
@@ -19,8 +19,8 @@ app.use(express.static('./public'));
 
 // Router
 // ========================
-// require('./app/routes/api-routes.js')(app);
-// require('./app/routes/html-routes.js')(app);
+require('./routes/api-routes.js');
+require('./routes/html-routes.js');
 
 // Listener
 // =======================
