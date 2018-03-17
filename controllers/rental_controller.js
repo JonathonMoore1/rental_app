@@ -10,7 +10,7 @@ router.get("/", function(req, res) {
 
 router.get("/renter", function(req, res) {
 	rentals.all(function(data) {
-		rentals.data;
+		rentals:data;
 		res.render("renter")
 	});		
 });
@@ -21,9 +21,11 @@ router.get("/owner", function(req,res) {
 });
 
 router.post("api/rentals", function(req, res) {
-	rentals.create([
-		"item", "rate", "owner", "location", "category", "imgURL", "description"], [
-		req.body.item, req.body.rate, req.body.owner, req.body.location, req.body.category, req.body.imgURL, req.body.description
+	rental.create([
+		"item", "rate", "owner", "location", "category", "imgURL", "description"
+		],[
+		req.body.item, req.body.rate, req.body.owner, req.body.location, 
+		req.body.category, req.body.imgURL, req.body.description
 		], function(result) {
 			res.json({id: result.insertId});
 		}
@@ -31,7 +33,7 @@ router.post("api/rentals", function(req, res) {
 });
 
 router.put("/api/rentals/:id", function(req, res) {
-	var condition = "id = " +req.params.id;
+	var condition = "id = " + req.params.id;
 	console.log("condition", condition);
 	rentals.update({
 		item: req.body.item,
