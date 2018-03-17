@@ -17,6 +17,9 @@ app.use(bodyParser.json());
 // Access public files
 app.use(express.static('./public'));
 
+app.engine('html', require('express'));
+app.set("view engine", "html");
+
 // Router
 // ========================
 var routes = require('./controllers/rental_controller.js');
