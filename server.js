@@ -19,19 +19,23 @@ app.use(express.static('./public'));
 
 // Router
 // ========================
-require('./routes/api-routes.js');
-require('./routes/html-routes.js');
+var routes = require('./controllers/rental_controller.js');
 
+app.use(routes);
 // Listener
 // =======================
 // db.sequelize.sync().then(function() {
-  app.listen(function(err) {
-    if (err) {
-      console.error("ERROR: " + stack.err);
-      return;
-    }
-    console.log("*** Listening on PORT: " + PORT + " ***");
-  })
+  app.listen(PORT, function() {
+  console.log("App now listening at localhost:" + PORT);
+});
+
+  // app.listen(function(err) {
+  //   if (err) {
+  //     console.error("ERROR: " + stack.err);
+  //     return;
+  //   }
+  //   console.log("*** Listening on PORT: " + PORT + " ***");
+  // })
 // })
 
 
