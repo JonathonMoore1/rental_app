@@ -17,8 +17,15 @@ app.use(bodyParser.json());
 // Access public files
 app.use(express.static('./public'));
 
-app.engine('html', require('express'));
-app.set("view engine", "html");
+
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+// app.set('views', __dirname + '/views')
+// app.engine('html', require('express'));
+// app.set("view engine", "html");
+
 
 // Router
 // ========================
