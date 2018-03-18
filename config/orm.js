@@ -1,4 +1,4 @@
-var connection = require('./connection.js');
+var connection = require('./connection_no_seq.js');
 
 var orm = {
     selectAll: function(table, cb) {
