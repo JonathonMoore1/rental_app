@@ -30,13 +30,7 @@ app.set("view engine", "handlebars");
 
 // Router
 // ========================
-<<<<<<< HEAD
-
 var routes = require('./controllers/rental_controller.js');
-app.use("/", routes);
-=======
-var routes = require('./controllers/rental_controller.js');
->>>>>>> ef2133fd365ae158420d3d0f6720f528d5ef66b0
 
 app.use(routes);
 // Listener

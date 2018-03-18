@@ -1,4 +1,4 @@
-INSERT INTO entries 
+INSERT INTO Rentals 
 (
   item, 
   rate, 
@@ -15,7 +15,7 @@ INSERT INTO entries
   "I own several fly rods in several weights and lengths. If you're headed out to fish local waters give me a holler!"
 );
 
-INSERT INTO entries
+INSERT INTO Rentals
 (
   item, 
   rate, 
@@ -32,7 +32,7 @@ INSERT INTO entries
   "Two great canoes just begging to be used! I promise they won't sink. If you're planning a Boundry Waters trip, look no further!"
 );
 
-INSERT INTO entries
+INSERT INTO Rentals
 (
   item,
   rate,

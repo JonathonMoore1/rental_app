@@ -3,11 +3,6 @@ var rentals = require ("../models/rentals_no_seq.js");
 var router = express.Router();
 
 router.get("/", function(req, res) {
-<<<<<<< HEAD
-	console.log('In base routes')
-		//res.render("../public/html/home.html");
-		res.send('test')
-=======
 	rentals.selectAll(function(data) {
 		var hbsObject = {
 			rentals:data
@@ -15,7 +10,6 @@ router.get("/", function(req, res) {
 		console.log(hbsObject);
 		res.render("home", hbsObject);
 	});		
->>>>>>> 046b3a6402a56275dc5740db22a2ee72ef047b60
 });
 
 router.get("/renter", function(req, res) {
@@ -29,10 +23,6 @@ router.get("/renter", function(req, res) {
 });
 
 router.get("/owner", function(req,res) {
-<<<<<<< HEAD
-	rentals.data;
-	res.render("onwer");
-=======
 	rentals.selectAll(function(data) {
 		var hbsObject = {
 			rentals:data
@@ -40,7 +30,6 @@ router.get("/owner", function(req,res) {
 		console.log(hbsObject);
 		res.render("owner");
 	});
->>>>>>> 046b3a6402a56275dc5740db22a2ee72ef047b60
 });
 
 router.post("api/rentals", function(req, res) {
