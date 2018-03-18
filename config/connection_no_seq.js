@@ -1,20 +1,17 @@
-// require('dotenv').config();
+require('dotenv').config();
 var mysql = require('mysql2');
-// var pw = "";
+var pw = process.env.MYSQL_PW;
 
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: "",
+  password: pw,
   port: 3306,
   database: 'rentalApp_db'
 });
 
 connection.connect(function(err) {
-  if (err) {
-    console.error(new Error("ERROR: " + stack.err));
-    return;
-  }
+  if (err) throw err;
   console.log("\nMYSQL CONNECTION SUCCESSFUL\n=================================");
 });
 

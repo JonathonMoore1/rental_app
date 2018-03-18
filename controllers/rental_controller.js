@@ -41,7 +41,7 @@ router.post("api/rentals", function(req, res) {
 		], function(result) {
 			res.json({id: result.insertId});
 		}
-	)
+	);
 });
 
 router.put("/api/rentals/:id", function(req, res) {
