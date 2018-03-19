@@ -14,6 +14,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<!-- Font Awesome -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
 	
 	
 </head>
@@ -41,13 +45,13 @@
 	    		<div class="col-md-6">
 			    	<div class="form-group">
 					    <label for="exampleFormControlInput1">Item Name</label>
-					    <input type="item" class="form-control" id="itemSearch" placeholder="ex: golf clubs">
+					    <input type="item" class="form-control" id="itemName" placeholder="ex: golf clubs">
 					 </div>
 					</div>
 					<div class="col-md-6">
 				    	<div class="form-group">
 						    <label for="exampleFormControlSelect1">Category</label>
-						    <select class="form-control" id="exampleFormControlSelect1">
+						    <select class="form-control" id="category">
 						      <option>1</option>
 						      <option>2</option>
 						      <option>3</option>
@@ -61,7 +65,7 @@
 				<form>
 				  <div class="form-group col-md-3">
 				    <label for="exampleFormControlFile1">Upload Photo of Item</label>
-				    <input type="file" class="imageFile" id="exampleFormControlFile1">
+				    <input type="file" class="imageFile" id="photo">
 				  </div>
 				</form>
 				<div class="col-md-3">
@@ -69,13 +73,13 @@
 			    <input type="text" class="form-control" id="price">
 				</div>
 				<div class="col-md-6">
-					<label for="image">Item Description</label>
+					<label for="itemDesc">Item Description</label>
 			    <input type="text" class="form-control" id="itemDesc">
 				</div>
 			</div>
 			 <div class="form-group">
 			    <label for="location">Location</label>
-			    <input type="location" class="form-control" id="locationSearch">
+			    <input type="location" class="form-control" id="location">
 			 </div>
 			 <div class="row">
 			 	<div class="col-md-4">
@@ -96,6 +100,37 @@
 	  </div>
 
 	</div>
+	</div>
+</div>
+<br><br><br>
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="card" style="width: 18rem;">
+	  <img class="card-img-top" id="photo" src="../assets/css/images/paddleboard.jpg", alt="Card image cap">
+	  <div class="card-body">
+	    <h5 class="card-title" id="itemName">SUP Paddleboard</h5>
+	    <p class="card-text" id="itemDesc">Perfect way to experience all the sites of Tahoe from the lake! Get an excellent workout on this easy to use board.</p>
+	  </div>
+	  <ul class="list-group list-group-flush">
+	    <li class="list-group-item" id="category">Water Sports</li>
+	    <li class="list-group-item" id="price">$25/day, $130/week</li>
+	    <li class="list-group-item" id="location">Lake Tahoe, UT</li>
+	    <li class="list-group-item" id="owner">Jessica</li>
+	  </ul>
+	</div>
+	<div class="col-md-1"></div>
+	<div class="card" style="width: 18rem;">
+	  <img class="card-img-top" id="photo" src="../assets/css/images/mtnbike.jpg", alt="Card image cap">
+	  <div class="card-body">
+	    <h5 class="card-title" id="itemName">Mountain Bike</h5>
+	    <p class="card-text" id="itemDesc">Checkout the Tahoe Bike Map for turn by turn directions along the lake's rim. And, for places to stop and expected terrain. Biking the region is my favorite activity.</p>
+	  </div>
+	  <ul class="list-group list-group-flush">
+	    <li class="list-group-item" id="category">Biking</li>
+	    <li class="list-group-item" id="price">$10/day, $50/week</li>
+	    <li class="list-group-item" id="location">Lake Tahoe, UT</li>
+	    <li class="list-group-item" id="owner">Jessica</li>
+	  </ul>
 	</div>
 </div>
 

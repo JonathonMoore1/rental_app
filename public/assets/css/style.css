@@ -59,6 +59,16 @@ html, body {
   color: white;
 }
 
+#itemDesc {
+  height: 60px;
+  overflow-y: scroll;
+}
+
+#image {
+  height: 100%,
+  width: 100%;
+}
+
 
 .wrapper {
   min-height: 100%;
