@@ -17,6 +17,16 @@ var rentals = {
         orm.resetAll('Rentals', function(res) {
             cb(res);
         })
+    }, 
+    update: function(table, condition, cb) {
+        orm.update('Rentals', condition, function(res) {
+            cb(res);
+        });
+    },
+    delete: function(condition, cb) {
+        orm.delete('Rentals', condition, function(res) {
+            cb(res);
+        });
     }
 };
 

@@ -4,23 +4,19 @@ var router = express.Router();
 
 router.get("/", function(req, res) {
 	rentals.selectAll(function(data) {
-		var hbsObject = {
-			rentals:data
-		};
-		console.log(hbsObject);
-		res.render("home", hbsObject);
+		res.render("home");
 	});		
 });
 
-router.get("/renter", function(req, res) {
-	rentals.selectAll(function(data) {
-		var hbsObject = {
-			rentals:data
-		};
-		console.log(hbsObject);
-		res.render("usersearch", hbsObject);
-	});		
-});
+// router.get("/renter", function(req, res) {
+// 	rentals.selectAll(function(data) {
+// 		var hbsObject = {
+// 			rentals:data
+// 		};
+// 		console.log(hbsObject);
+// 		res.render("usersearch", hbsObject);
+// 	});		
+// });
 
 router.get("/owner", function(req,res) {
 	rentals.selectAll(function(data) {
