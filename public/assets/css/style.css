@@ -87,3 +87,7 @@ html, body {
 .page-footer {
 	font-color: #607d8b;
 }
+
+.nav-item {
+  padding: 32px;
+}
