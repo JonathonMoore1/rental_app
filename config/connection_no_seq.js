@@ -1,11 +1,11 @@
 require('dotenv').config();
 var mysql = require('mysql2');
-var pw = process.env.MYSQL_PW;
+
 
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: "1234",
+  password: "",
   port: 3306,
   database: 'rentalApp_db'
 });
