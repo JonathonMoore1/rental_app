@@ -8,18 +8,16 @@ router.get("/", function(req, res) {
 	});		
 });
 
-// router.get("/renter", function(req, res) {
-// 	rentals.selectAll(function(data) {
-// 		var hbsObject = {
-// 			rentals:data
-// 		};
-// 		console.log(hbsObject);
-// 		res.render("usersearch", hbsObject);
-// 	});		
-// });
+router.get("/renter", function(req, res) {
+	rentals.selectAll(function(data) {
+		res.render("usersearch");
+	});		
+});
 
 router.get("/owner", function(req,res) {
-	rentals.selectAll(function(data) {
+	var condition = "owner = " + req.params.id;
+	console.log("condition", condition);
+	rentals.selectOne(function(data) {
 		var hbsObject = {
 			rentals:data
 		};
