@@ -32,17 +32,18 @@ var orm = {
         );
     },
 
-    selectOne: function(tabel, cb) {
-        var queryString = 'SELECT * FROM ' + table;
-        queryString += " WHERE owner= ";
-        queryString += condition;
-        console.log(queryString);
-        connection.query(queryString, function(err, result) {
-            if(err) {
-                throw err;
-            } cb(result);
-        });
-    }
+    // selectOne: function(table, objColVals, condition, cb) {
+    //     var queryString = 'SELECT * FROM ' + table;
+    //     queryString += objToSql(objColVals);
+    //     queryString += " WHERE ";
+    //     queryString += condition;
+    //     console.log(queryString);
+    //     connection.query(queryString, function(err, result) {
+    //         if(err) {
+    //             throw err;
+    //         } cb(result);
+    //     });
+    // },
     insertOne: function(table, col, val, cb) {
         var queryString = 'INSERT INTO ?? (??) VALUES (?)';
         connection.query(
