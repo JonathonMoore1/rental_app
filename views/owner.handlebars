@@ -1,10 +1,22 @@
 <link rel="stylesheet" href="../public/assets/css/style.css" type="text/css">
 <body class="owner">
 <div class="row">
-	<div class="jumbotron">
+
+	<div class="jumbotron jumbotron-fluid">
 	  <div class="container">
 	    <h1>Vacation Recreation</h1>
 	  </div>
+	  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
 	</div>
 </div>
 
@@ -113,25 +125,35 @@
 	</div>
 </div>
 
-<div class="modal" tabindex="-1" role="dialog" id="myModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Confirm Your Lisiting</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+ <!-- Modal -->
+	<div id="resultsModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h2 class="modal-title"><strong>Here is the love of your life: </strong></h2>
+	      </div>
+	      <div class="modal-body">
+	        <h2 id="matchName">Remi</h2>
+	        <img id="matchImg" src="/images/remi.jpg">
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Yup! So right!</button>
+	      </div>
+	    </div>
+
+	</div>
 
 </body>
 
+<script>
+
+//modal results
+$("#submit").on("click", function(){
+	$("#resultsModal").modal('toggle');
+});
+
+</script>
