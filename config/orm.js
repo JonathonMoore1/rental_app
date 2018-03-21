@@ -56,7 +56,7 @@ var orm = {
         );
     },
     resetAll: function(table, cb) {
-        var queryString = 'TRUNCATE TABLE ' + table;
+        var queryString = 'TRUNCATE TABLE (??)';
         connection.query(
             queryString, [table],
             function(err, res) {
