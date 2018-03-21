@@ -14,6 +14,12 @@ router.get("/renter", function(req, res) {
 	});		
 });
 
+router.get("/api/rental/", function(req,res) {
+	rentals.selectAll(function(data) {
+		res.json(data);
+	});
+});
+
 router.get("/owner", function(req,res) {
 	var condition = "owner = " + req.params.name;
 	console.log("condition", condition);
