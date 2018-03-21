@@ -1,9 +1,5 @@
 $(document).ready(function() {
 
-
-
-  
-
   $('#submit').on('click', function(e) {
 
     var searchResults = {
@@ -25,19 +21,26 @@ $(document).ready(function() {
       url : "/api/rental/",
       method: "GET"
     }).then(function(data) {
-      var item = data[0].item;
-      var category = data[0].category;
-      var describe = data[0].description;
-      var location = data[0].location;
-      var rate = data[0].rate;
+      console.log(data.length);
+      for (i = 0; i < data.length; i++) {
+        var item = data[i].item
+        var category = data[i].category;
+        var describe = data[i].description;
+        var location = data[i].location;
+        var rate = data[i].rate;
 
+        if (searchResults.location === location) {
+          var newImage = $("<div>");
+          newImage.addClass("card", "col-md-4");
+          newImage.attr("id", "newCard");
+          newImage.html("Item: " + item + "<br>" + "Category: " + category + "<br> " + "Location: " + location  + "<br>" + "Description: " + describe + "<br>" + "Rate: " + rate);
+          $('#results').append(newImage);
+        }
 
-      var newImage = $("<div>");
-      newImage.addClass("card", "col-md-4");
-      newImage.html(item + category + describe + rate);
-      $('#results').append(newImage);
+      }
+      
 
-      console.log(data);
+      //console.log(data);
 
     });
   });
