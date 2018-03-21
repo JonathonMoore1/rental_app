@@ -21,9 +21,10 @@ $(document).ready(function() {
       url : "/api/rental/",
       method: "GET"
     }).then(function(data) {
-      console.log(data.length);
+      console.log(data);
       for (i = 0; i < data.length; i++) {
-        var item = data[i].item
+        var name = data[i].username;
+        var item = data[i].item;
         var category = data[i].category;
         var describe = data[i].description;
         var location = data[i].location;

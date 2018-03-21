@@ -1,43 +1,21 @@
-$(document).ready(function() {
+$('document').on('ready', function(e) {
+  e.preventDefault();
 
-  $('#owner-submit').on('click', function(e) {
+  var newItem = {
+    item: $('#item-name').val().trim(),
+    rate: $('#item-price').val().trim(),
+    owner: 'placeholder',
+    location: $('#item-location').val().trim(),
+    category: $('#item-category').val().trim(),
+    imgURL: $('item-img').val().trim(),
+    description: $('#item-description').val().trim()
+  };
 
-    var newItem = {
-    item : $('#itemSearch').val().trim(),
-    category : $('#category').val().trim(),
-    location : $('#locationSearch').val().trim(),
-    dayFrom : $('#day').val().trim(),
-    dayTo : $('#daytwo').val().trim()
+  $.ajax('/api/rentals', {
+    type: 'POST',
+    data: newItem
+  }).then(function() {
+    console.log("*** NEW RENTAL ADDED ***");
+  })
 
-    }
-
-    console.log(searchResults);
-
-    e.preventDefault();
-    
-
-
-    $.ajax({
-      url : "/api/rental/",
-      method: "GET"
-    }).then(function(data) {
-      console.log(data.length);
-      for (i = 0; i < data.length; i++) {
-        var item = data[i].item
-        var category = data[i].category;
-        var describe = data[i].description;
-        var location = data[i].location;
-        var rate = data[i].rate;
-
-        if (searchResults.location === location) {
-          var newImage = $("<div>");
-          newImage.addClass("card", "col-md-4");
-          newImage.attr("id", "newCard");
-          newImage.html("Item: " + item + "<br>" + "Category: " + category + "<br> " + "Location: " + location  + "<br>" + "Description: " + describe + "<br>" + "Rate: " + rate);
-          $('#results').append(newImage);
-        }
-
-      }
-    });
-  });
 });
