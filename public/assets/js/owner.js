@@ -1,4 +1,4 @@
-$('document').on('click', function(e) {
+$('document').on('ready', function(e) {
   e.preventDefault();
 
 
