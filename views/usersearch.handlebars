@@ -114,6 +114,14 @@ $(document).ready(function() {
 		newImage.addClass("card", "col-md-4");
 		newImage.html(searchResults.item + searchResults.category);
 		$('#results').append(newImage);
+
+
+		$.ajax({
+			url : "/api/rental/",
+			method: "GET"
+		}).then(function(data) {
+			console.log(data);
+		})
 	});
 });
 
