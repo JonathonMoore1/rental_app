@@ -5,7 +5,7 @@ var mysql = require('mysql2');
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: "1234",
+  password: "sixhbpH7&",
   port: 3306,
   database: 'rentalApp_db'
 });
