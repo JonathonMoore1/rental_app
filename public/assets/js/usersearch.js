@@ -1,23 +1,47 @@
-(() => {
+$(document).ready(function() {
+
   $('#submit').on('click', function(e) {
+
+    var searchResults = {
+    item : $('#itemSearch').val().trim(),
+    category : $('#category').val().trim(),
+    location : $('#locationSearch').val().trim(),
+    dayFrom : $('#day').val().trim(),
+    dayTo : $('#daytwo').val().trim()
+
+    }
+
+    console.log(searchResults);
+
     e.preventDefault();
+    
 
-    if ($('#user-type').val() === 1) {
-      $.ajax('/renter', {
-        method: GET
-      }).then(function() {
-        console.log('*** Dislaying renter ***');
-        location.reload();
-      })
-    }
 
-    if ($('#user-type').val() === 2) {
-      $.ajax('/owner', {
-        method: GET
-      }).then(function() {
-        console.log('*** Displaying owner ***');
-        location.reload();
-      });
-    }
+    $.ajax({
+      url : "/api/rental/",
+      method: "GET"
+    }).then(function(data) {
+      console.log(data.length);
+      for (i = 0; i < data.length; i++) {
+        var item = data[i].item
+        var category = data[i].category;
+        var describe = data[i].description;
+        var location = data[i].location;
+        var rate = data[i].rate;
+
+        if (searchResults.location === location) {
+          var newImage = $("<div>");
+          newImage.addClass("card", "col-md-4");
+          newImage.attr("id", "newCard");
+          newImage.html("Item: " + item + "<br>" + "Category: " + category + "<br> " + "Location: " + location  + "<br>" + "Description: " + describe + "<br>" + "Rate: " + rate);
+          $('#results').append(newImage);
+        }
+
+      }
+      
+
+      //console.log(data);
+
+    });
   });
 });

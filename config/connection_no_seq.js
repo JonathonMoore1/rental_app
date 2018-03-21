@@ -1,6 +1,6 @@
 require('dotenv').config();
 var mysql = require('mysql2');
-var pw = process.env.MYSQL_PW;
+var pw = process.env.PORT;
 
 var connection = mysql.createConnection({
   host: 'localhost',

@@ -21,13 +21,17 @@ body {
   background-image: url(images/summer.jpg), url(images/fall.jpg), url(images/winter.jpg), url(images/spring.jpg);
 }
 
-.jumbotron {
+.navbar {
 	background-color: transparent;
   color: white;
   font-weight: bolder;
   padding: 32px;
-  width: auto;
-  float: right;
+}
+
+.navbar-nav {
+  background-color: transparent;
+  color: white;
+  font-weight: bolder;
 }
 
 
@@ -91,3 +95,12 @@ html, body {
 .nav-item {
   padding: 32px;
 }
+
+#newCard {
+    display: inline-block;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin bottom: 50px;
+    width: 30%;
+  }

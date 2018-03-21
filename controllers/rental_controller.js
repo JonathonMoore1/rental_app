@@ -4,25 +4,25 @@ var router = express.Router();
 
 router.get("/", function(req, res) {
 	rentals.selectAll(function(data) {
-		var hbsObject = {
-			rentals:data
-		};
-		console.log(hbsObject);
-		res.render("home", hbsObject);
+		res.render("home");
 	});		
 });
 
 router.get("/renter", function(req, res) {
 	rentals.selectAll(function(data) {
-		var hbsObject = {
-			rentals:data
-		};
-		console.log(hbsObject);
-		res.render("usersearch", hbsObject);
+		res.render("usersearch");
 	});		
 });
 
+router.get("/api/rental/", function(req,res) {
+	rentals.selectAll(function(data) {
+		res.json(data);
+	});
+});
+
 router.get("/owner", function(req,res) {
+	var condition = "owner = " + req.params.name;
+	console.log("condition", condition);
 	rentals.selectAll(function(data) {
 		var hbsObject = {
 			rentals:data
@@ -33,7 +33,7 @@ router.get("/owner", function(req,res) {
 });
 
 router.post("api/rentals", function(req, res) {
-	rental.create([
+	rental.insertOne([
 		"item", "rate", "owner", "location", "category", "imgURL", "description"
 		],[
 		req.body.item, req.body.rate, req.body.owner, req.body.location, 
