@@ -8,11 +8,11 @@ var rentals = {
             cb(res);
         });
     },
-    selectOne: function(table, condition, cb) {
-        orm.selectOne('Rentals', condition, function(res) {
-            cb(res);
-        });
-    },
+    // selectOne: function(table, condition, cb) {
+    //     orm.selectOne('Rentals', condition, function(res) {
+    //         cb(res);
+    //     });
+    // },
     insertOne: function(val, cb) {
         orm.insertOne('Rentals', 'item', val, function(res) {
             cb(res);
