@@ -33,7 +33,7 @@ router.get("/owner", function(req,res) {
 });
 
 router.post("api/rentals", function(req, res) {
-	rental.create([
+	rental.insertOne([
 		"item", "rate", "owner", "location", "category", "imgURL", "description"
 		],[
 		req.body.item, req.body.rate, req.body.owner, req.body.location, 
