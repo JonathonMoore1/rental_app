@@ -33,6 +33,7 @@ router.get("/owner", function(req,res) {
 });
 
 router.post("api/rentals", function(req, res) {
+	console.log('in api rentals');
 	rentals.insertOne(
 		req.body.username, req.body.item, req.body.rate, req.body.owner, req.body.location, 
 		req.body.category, req.body.imgURL, req.body.description

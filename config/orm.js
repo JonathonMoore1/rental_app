@@ -45,13 +45,15 @@ var orm = {
     //     });
     // },
     insertOne: function(table, col, val, cb) {
+        console.log('insertOne called')
         var queryString = 'INSERT INTO ?? (??) VALUES (?)';
         connection.query(
             queryString, [table, col, val],
             function(err, res) {
                 if (err) throw err;
-                cb(res);
                 console.log(queryString);
+                cb(res);
+                
             }
         );
     },
