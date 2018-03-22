@@ -14,5 +14,5 @@ CREATE TABLE Rentals
   category VARCHAR (255) NOT NULL,
   imgURL VARCHAR (255) NULL,
   description TINYTEXT NULL,
-  PRIMARY KEY (id)
+  lPRIMARY KEY (id)
 );
