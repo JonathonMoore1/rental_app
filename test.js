@@ -1,41 +1,41 @@
 var Nightmare = require("nightmare");
 var expect = require("chai").expect;
 
-describe("Codecademy", function() {
+describe("Renter Search", function() {
   // The default tests in mocha is 2 seconds.
   // Extending it to 30 seconds to have time to load the pages
 
   this.timeout(30000);
-  it("should send user to the catalog page", function(done) {
+  it("should send user to the renter page", function(done) {
     // ID for the login button.
     Nightmare({ show: true })
-      .goto("https://codecademy.com")
-      // Click the catalog link
-      .click("a[href='/learn/all']")
+      .goto("http://localhost:8080")
+      // Click the Renter link
+      .click("a[href='/renter']")
       // Evaluate the title
       .evaluate(function() {
         return document.title;
       })
       // Asset the title is as expected
       .then(function(title) {
-        expect(title).to.equal("Catalog | Codecademy");
+        expect(title).to.equal("Welcome! What are you searching for today?");
         done();
       });
   });
 
-  it("should present a link to course catalog after login", function(done) {
+  it("should present a form asking a user what recreation equipment they'd like to rent", function(done) {
     new Nightmare({ show: true })
-      .goto("https://www.codecademy.com/login")
-      // Enter username.
-      .type("#user_login", "ResilD")
-      // Enter password.
-      .type("#login__user_password", "dummy*password")
+      .goto("http://localhost:8080/renter")
+      // Enter search item.
+      .type("#itemSearch", "SearchItem")
+      // Enter location.
+      .type("#locationSearch", "LocationSearch")
       // Click the login button
-      .click("#user_submit")
+      .click("#submit")
       // Evaluate the following selector
       .evaluate(function() {
-        // Assert the "learn" link can be found
-        return document.querySelector("a[href='/learn']");
+        // Return the items available to rent
+        return document.querySelector("a[href='/renter']");
       })
       .then(function(link) {
         expect(link).to.not.equal(undefined);
