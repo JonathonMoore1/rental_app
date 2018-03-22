@@ -2,6 +2,24 @@
 	box
 }
 
+.jumbotron {
+  background-color: transparent;
+  color: white;
+  font-weight: bolder;
+  padding: 32px;
+}
+
+.list-inline {
+  background-color: transparent;
+  color: white;
+  float: right;
+}
+
+.nav-link {
+  a: hover;
+  color: white;
+}
+
 body {
 	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
 	background-size: 50%, 50%, 50%, 50%;
@@ -20,20 +38,6 @@ body {
 .renter {
   background-image: url(images/summer.jpg), url(images/fall.jpg), url(images/winter.jpg), url(images/spring.jpg);
 }
-
-.navbar {
-	background-color: transparent;
-  color: white;
-  font-weight: bolder;
-  padding: 32px;
-}
-
-.navbar-nav {
-  background-color: transparent;
-  color: white;
-  font-weight: bolder;
-}
-
 
 .body {
     display: flex;

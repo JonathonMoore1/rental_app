@@ -5,14 +5,14 @@ var pw = process.env.MYSQL_PW;
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: pw,
+  password: "",
   port: 3306,
   database: 'rentalApp_db'
 });
 
 connection.connect(function(err) {
   if (err) throw err;
-  console.log("\nMYSQL CONNECTION SUCCESSFUL\n=================================");
+  console.log("\nMYSQL CONNECTION SUCCESSFUL\n");
 });
 
 module.exports = connection;
