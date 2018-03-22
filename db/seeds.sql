@@ -32,7 +32,7 @@ INSERT INTO Rentals
   "$75/day",
   "Jane",
   "Ely, MN",
-  "Boating",
+  "Water Sports",
   "Two great canoes just begging to be used! I promise they won't sink. If you're planning a Boundry Waters trip, look no further!"
 );
 
@@ -51,6 +51,6 @@ INSERT INTO Rentals
   "$30/day",
   "Chad",
   "Aspen, CO",
-  "Skiing/Snowboarding",
+  "Winter Sports",
   "There’s freshies on the super-jib in Aspen, brah. My gear is SICK. Come check it out, gazers!"
 );
