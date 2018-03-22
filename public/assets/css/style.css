@@ -9,6 +9,10 @@
   padding: 32px;
 }
 
+h1 {
+  font-family: 'Rammetto One', cursive;
+}
+
 .list-inline {
   background-color: transparent;
   color: white;
@@ -77,6 +81,14 @@ html, body {
   width: 100%;
 }
 
+#ownerSubmit {
+  width: 90px;
+  margin-left: 15px;
+  padding-top: 6px;
+  padding-right: 12px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+}
 
 .wrapper {
   min-height: 100%;
