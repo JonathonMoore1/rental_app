@@ -34,7 +34,7 @@
 			<div class="row">
 				<form>
 				  <div class="form-group col-md-3">
-				    <label for="item-img">Upload Photo of Item</label>
+				    <label for="item-img">Upload Photo of Item <ion-icon name="attach"></ion-icon></label>
 				    <input type="file" class="imageFile" id="item-img">
 				  </div>
 				</form>
@@ -52,7 +52,7 @@
 			    <input type="location" class="form-control" id="item-location">
 			 </div>
 
-			
+		<div class="row">	
 		 	<div class="col-md-4">
 					 <div class="form-group">
 					    <label for="dateNeeded">Date Available From: </label>
@@ -66,8 +66,9 @@
 					 </div>
 				</div> 
 			</div>
+		</div>
 			 <br>
-			 <button id="ownerSubmit" type="submit" class="btn btn-primary mb-2">Submit <i class="fas fa-search"></i></button> 
+			 <button id="ownerSubmit" type="submit" class="btn btn-primary mb-2">Submit <ion-icon name="search"></ion-icon></button> 
 		</form>
 	  </div>
 
@@ -75,42 +76,19 @@
 	</div>
 </div>
 
-<div class ="row" id="results"></div>
+
+<br><br>
+	<div class="row">
+	  <div class="col-md-2"></div>
+	  <div class="col-md-8" id="ownerResults"></div>
+	  <div class="col-md-2"></div>
+	</div>
+	
+	</div>
 
 <br><br>
 
 <br><br><br>
-<div class="row">
-	<div class="col-md-3"></div>
-	<div class="card" style="width: 18rem;">
-	  <img class="card-img-top" id="photo" src="../public/assets/css/images/paddleboard.jpg", alt="Card image cap">
-	  <div class="card-body">
-	    <h5 class="card-title" id="itemName">SUP Paddleboard</h5>
-	    <p class="card-text" id="itemDesc">Perfect way to experience all the sites of Tahoe from the lake! Get an excellent workout on this easy to use board.</p>
-	  </div>
-	  <ul class="list-group list-group-flush">
-	    <li class="list-group-item" id="category">Water Sports</li>
-	    <li class="list-group-item" id="price">$25/day, $130/week</li>
-	    <li class="list-group-item" id="location">Lake Tahoe, UT</li>
-	    <li class="list-group-item" id="owner">Jessica</li>
-	  </ul>
-	</div>
-	<div class="col-md-1"></div>
-	<div class="card" style="width: 18rem;">
-	  <img class="card-img-top" id="photo" src="../public/assets/css/images/mtnbike.jpg", alt="Card image cap">
-	  <div class="card-body">
-	    <h5 class="card-title" id="itemName">Mountain Bike</h5>
-	    <p class="card-text" id="itemDesc">Checkout the Tahoe Bike Map for turn by turn directions along the lake's rim. And, for places to stop and expected terrain. Biking the region is my favorite activity.</p>
-	  </div>
-	  <ul class="list-group list-group-flush">
-	    <li class="list-group-item" id="category">Biking</li>
-	    <li class="list-group-item" id="price">$10/day, $50/week</li>
-	    <li class="list-group-item" id="location">Lake Tahoe, UT</li>
-	    <li class="list-group-item" id="owner">Jessica</li>
-	  </ul>
-	</div>
-</div>
-
 
 <div class="modal" id="#myModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">

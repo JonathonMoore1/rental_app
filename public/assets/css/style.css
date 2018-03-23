@@ -66,11 +66,13 @@ html, body {
 }
 
 #newCard {
-  height: 523.031px;
+  height: auto;
   width: : 286px;
-  padding: 0px;
+  padding: 0px !important;
+  margin: 0px !important;
   border-color: solid 1px orangeRed;
 }
+
 
 .btn {
   background-color: orangeRed;
@@ -78,9 +80,23 @@ html, body {
   color: white;
 }
 
-.card-text {
-  height: 60px;
+img {
+  height: 100%,
+  width: 100%;
+}
+
+#describe {
+  height: 10px;
   overflow-y: scroll;
+}
+
+#newOwnerCard {
+  float: center;
+  width: 286px;
+  height: auto;
+  padding: 0px !important;
+  margin: 0px !important;
+  border-color: solid 1px orangeRed;
 }
 
 #image {
