@@ -9,7 +9,7 @@ describe("Renter Search", function() {
   it("should send user to the renter page", function(done) {
     // ID for the login button.
     Nightmare({ show: true })
-      .goto("http://localhost:8080")
+      .goto("localhost:8080")
       // Click the Renter link
       .click("a[href='/renter']")
       // Evaluate the title

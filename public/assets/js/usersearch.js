@@ -68,7 +68,6 @@ $(document).ready(function() {
           newCard.append(newUL);
           $('#results').append(newCard);
         }
-
       }
       
       // //console.log(data);

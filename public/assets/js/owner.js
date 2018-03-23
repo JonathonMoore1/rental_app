@@ -2,7 +2,7 @@ $(document).on('ready', function () {
 
   $('#ownerSubmit').on('click', function (e) {
     e.preventDefault();
-
+    alert('button clicked!')
     function trimIfString(val) {
       return typeof val === 'string' ? val.trim() : val;
     }
@@ -14,10 +14,15 @@ $(document).on('ready', function () {
       owner: trimIfString('placeholder'),
       location: trimIfString($('#item-location').val()),
       category: trimIfString($('#item-category').val()),
-      imgURL: trimIfString($('item-img').val()),
+     // imgURL: trimIfString($('item-img').val()),
       description: trimIfString($('#item-description').val())
     };
     console.log(newItem);
+    // $.ajax('/', {
+    //   type: 'GET'
+    // }).then(function() {
+    //   console.log('GET request made');
+    // })
     $.ajax('/api/rentals', {
       type: 'POST',
       data: newItem
@@ -59,7 +64,15 @@ $.ajax({
       else {
         $('.modalInfo').html("Invalid username");
         $('#newUser').css("display", "block");
+        //$('#newUserInput').css("display","block");
       }
     }
   });
 });
+
+$("#newUser").on('click', function() {
+  $('#newUserInput').css("display", "block");
+  $('#submit-modal').css("display", "none");
+  $("#close").html("Create New User");
+  $('#newUser').css("display", "none");
+})
