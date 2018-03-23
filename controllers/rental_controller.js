@@ -32,14 +32,20 @@ router.get("/owner", function(req,res) {
 	});
 });
 
-router.post("/api/rentals", function(req, res, next, error) {
-	if (error) {
-		console.log(error);
-	}
-	console.log('in api rentals');
+router.get("/api/rentals", function(req, res) {
+	console.log('route: get /api/rentals');
+	res.json({success: true});
+})
+
+router.post("/api/rentals", function(req, res) {
+	console.log('Hits route');
+	// if (error) {
+	// 	console.log(error);
+	// }
+	// console.log('in api rentals');
 	rentals.insertOne(
 		req.body.username, req.body.item, req.body.rate, req.body.owner, req.body.location, 
-		req.body.category, req.body.imgURL, req.body.description
+		req.body.category, req.body.description
 		, function(result) {
 			console.log(JSON.stringify(result));
 			res.json({id: result.insertId});

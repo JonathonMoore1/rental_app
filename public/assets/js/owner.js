@@ -24,7 +24,7 @@ $(document).on('ready', function () {
     //   console.log('GET request made');
     // })
     $.ajax('/api/rentals', {
-      type: 'POST',
+      type: 'post',
       data: newItem
     }).then(function () {
       console.log("*** NEW RENTAL ADDED ***");
