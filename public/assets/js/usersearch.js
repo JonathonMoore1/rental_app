@@ -29,18 +29,48 @@ $(document).ready(function() {
         var describe = data[i].description;
         var location = data[i].location;
         var rate = data[i].rate;
+        var imgURL = data[i].imgURL;
+        var owner = data[i].owner;
 
-        if ((searchResults.location === location) || (searchResults.item === item) || (searchResults.category === category)) {
-          var newImage = $("<div>");
-          newImage.addClass("card", "col-md-4");
-          newImage.attr("id", "newCard");
-          newImage.html("Item: " + item + "<br>" + "Category: " + category + "<br> " + "Location: " + location  + "<br>" + "Description: " + describe + "<br>" + "Rate: " + rate);
-          $('#results').append(newImage);
+        if (searchResults.location === location) {
+          var newCard = $("<div>");
+          var newImg = $("<img>");
+          var newUL = $("<ul>");
+          var cardTitle = $("<h5>");
+          var desc = $("<p>");
+          var cat = $("<li>");
+          var ra = $("<li>");
+          var loc = $("<li>");
+          var na = $("<li>");
+          cat.addClass("list-group-item");
+          ra.addClass("list-group-item");
+          loc.addClass("list-group-item");
+          na.addClass("list-group-item");
+          cat.html(category);
+          ra.html(rate);
+          loc.html(location);
+          na.html(owner);
+          cardTitle.addClass("card-title");
+          cardTitle.append(item);
+          desc.addClass("card-text");
+          newUL.addClass("list-group list-group-flush");
+          newUL.append(cat);
+          newUL.append(ra);
+          newUL.append(loc);
+          newUL.append(na);
+          newImg.addClass("card-img-top");
+          newCard.addClass("card");
+          newCard.attr("id", "newCard");
+          newImg.attr("src", imgURL);
+          newCard.append(newImg);
+          newCard.append(cardTitle);
+          newCard.append(describe);
+          newCard.append(newUL);
+          $('#results').append(newCard);
         }
       }
       
-
-      //console.log(data);
+      // //console.log(data);
 
     });
   });
