@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="../public/assets/css/style.css" type="text/css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
 <body class="owner">
 
@@ -129,62 +131,12 @@
 		</form>
       </div>
       <div class="modal-footer">
-        <button type="submit" id="resultsModal" class="btn btn-primary">Submit</button>
+        <button type="submit" id="submit-modal" class="btn btn-primary">Submit</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" id="newUser" class="brn btn-secondary" data-dismiss="modal">Create New User</button>
       </div>
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-    $(window).on('load',function(){
-    	console.log("show modal");
-        $('.modal').modal('show');
-    });
-
-    $("#resultsModal").on('click', function() {
-
-	var userName = $('#userName').val().trim();
-	console.log(userName);
-
-	$.ajax({
-      url : "/api/rental/",
-      method: "GET"
-    }).then(function(data) {
-      console.log(data.length);
-      for (i = 0; i < data.length; i++) {
-      	var name = data[i].username;
-        var item = data[i].item
-        var category = data[i].category;
-        var describe = data[i].description;
-        var location = data[i].location;
-        var rate = data[i].rate;
-
-        if (userName === name) {
-          $('.modal').modal('hide');
-          var newImage = $("<div>");
-          newImage.addClass("card", "col-md-4");
-          newImage.attr("id", "newCard");
-          newImage.html("Item: " + item + "<br>" + "Category: " + category + "<br> " + "Location: " + location  + "<br>" + "Description: " + describe + "<br>" + "Rate: " + rate);
-          $('#results').append(newImage);
-        }
-        else {
-        	$('.modalInfo').html("Invalid username");
-        	$('#newUser').css("display", "block");
-        }
-
-      }
-      
-
-      //console.log(data);
-
-    });
-
-});
-
-
-</script>
-
-
+<script src="../../public/assets/js/owner.js"></script>
 </body>
