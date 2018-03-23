@@ -44,11 +44,15 @@ var orm = {
     //         } cb(result);
     //     });
     // },
-    insertOne: function(table, col, val, cb) {
+    insertOne: function(table, username, item, rate, owner, location, category, description, cb) {
         console.log('insertOne called')
-        var queryString = 'INSERT INTO ?? (??) VALUES (?)';
+        var queryString = 'INSERT INTO `' + table + '` (' + 
+        'username, item, rate, owner, location, category, description)' +
+        'VALUES (' + username + ', ' + item + ', '  + ', ' + rate + ', ' + 
+        owner + ', ' + location + ', ' + category + ', ' + description + ')';
         connection.query(
-            queryString, [table, col, val],
+            queryString,
+            // [table, col, val],
             function(err, res) {
                 if (err) throw err;
                 console.log(queryString);

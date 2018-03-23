@@ -13,8 +13,8 @@ var rentals = {
     //         cb(res);
     //     });
     // },
-    insertOne: function(val, cb) {
-        orm.insertOne('Rentals', 'item', val, function(res) {
+    insertOne: function(table, username, item, rate, owner, location, category, description, cb) {
+        orm.insertOne('Rentals', username, item, rate, owner, location, category, description,  val, function(res) {
             cb(res);
         });
     },

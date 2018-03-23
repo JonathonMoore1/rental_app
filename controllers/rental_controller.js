@@ -22,17 +22,20 @@ router.get("/api/rental/", function(req,res) {
 
 router.get("/owner", function(req,res) {
 	var condition = "owner = " + req.params.name;
-	console.log("condition", condition);
+//	console.log("condition", condition);
 	rentals.selectAll(function(data) {
 		var hbsObject = {
 			rentals:data
 		};
-		console.log(hbsObject);
+	//	console.log(hbsObject);
 		res.render("owner");
 	});
 });
 
-router.post("api/rentals", function(req, res) {
+router.post("/api/rentals", function(req, res, next, error) {
+	if (error) {
+		console.log(error);
+	}
 	console.log('in api rentals');
 	rentals.insertOne(
 		req.body.username, req.body.item, req.body.rate, req.body.owner, req.body.location, 
