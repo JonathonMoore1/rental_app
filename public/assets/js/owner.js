@@ -64,7 +64,15 @@ $.ajax({
       else {
         $('.modalInfo').html("Invalid username");
         $('#newUser').css("display", "block");
+        //$('#newUserInput').css("display","block");
       }
     }
   });
 });
+
+$("#newUser").on('click', function() {
+  $('#newUserInput').css("display", "block");
+  $('#submit-modal').css("display", "none");
+  $("#close").html("Create New User");
+  $('#newUser').css("display", "none");
+})
