@@ -5,7 +5,7 @@ var pw = process.env.MYSQL_PW;
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: pw,
+  password: 'sixhbpH7&',
   port: 3306,
   database: 'rentalApp_db'
 });

@@ -30,14 +30,13 @@ $(document).ready(function() {
         var location = data[i].location;
         var rate = data[i].rate;
 
-        if (searchResults.location === location) {
+        if ((searchResults.location === location) || (searchResults.item === item) || (searchResults.category === category)) {
           var newImage = $("<div>");
           newImage.addClass("card", "col-md-4");
           newImage.attr("id", "newCard");
           newImage.html("Item: " + item + "<br>" + "Category: " + category + "<br> " + "Location: " + location  + "<br>" + "Description: " + describe + "<br>" + "Rate: " + rate);
           $('#results').append(newImage);
         }
-
       }
       
 
