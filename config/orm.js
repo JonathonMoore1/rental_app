@@ -47,9 +47,9 @@ var orm = {
     insertOne: function(table, username, item, rate, owner, location, category, description, cb) {
         console.log('insertOne called')
         var queryString = "INSERT INTO `" + table + "` (" + 
-        "username, item, rate, owner, location, category, description)" +
-        "VALUES ('" + username + "', '" + item + "', '"  + "', '" + rate + "', '" + 
-        owner + "', '" + location + "', '" + category + "', '" + description + "')";
+        "username, item, rate, owner, location, category, description) " +
+        `VALUES ('${username}', '${item}', '${rate}', '${owner}', '${location}', '${category}', '${description}')`;
+        console.log(queryString);
         connection.query(
             queryString,
             // [table, col, val],

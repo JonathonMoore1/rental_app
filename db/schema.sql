@@ -6,13 +6,13 @@ USE rentalApp_db;
 CREATE TABLE Rentals
 (
   id INT NOT NULL AUTO_INCREMENT,
-  username VARCHAR(255) NOT NULL,
-  item VARCHAR(255) NOT NULL,
-  rate VARCHAR(255) NOT NULL,
-  owner VARCHAR(255) NOT NULL,
-  location VARCHAR(255) NOT NULL,
-  category VARCHAR(255) NOT NULL,
+  username VARCHAR(255) NULL,
+  item VARCHAR(255) NULL,
+  rate VARCHAR(255) NULL,
+  owner VARCHAR(255) NULL,
+  location VARCHAR(255) NULL,
+  category VARCHAR(255) NULL,
+  description VARCHAR(255) NULL,
   imgURL VARCHAR(255) NULL,
-  description TINYTEXT NULL,
   PRIMARY KEY (id)
 );
