@@ -124,3 +124,7 @@ html, body {
 #newUser {
   display: none;
 }
+
+#newUserInput {
+  display: none;
+}

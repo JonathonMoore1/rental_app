@@ -51,6 +51,12 @@
 			    <label for="item-location">Location</label>
 			    <input type="location" class="form-control" id="item-location">
 			 </div>
+
+
+
+
+
+
 			 {{!-- <div class="row">
 			 	<div class="col-md-4">
 					 <div class="form-group">
@@ -128,11 +134,18 @@
 		    <div class = "modalInfo"></div>
 		  </div>
 		</form>
+		<form id="newUserInput">
+			<div class="form-group">
+				<label for="createNew">Enter New Username</label>
+				<input type= "newUser" class="form-control" placeholder="abc123">
+			</div>
+		</form>
+
       </div>
       <div class="modal-footer">
         <button type="submit" id="submit-modal" class="btn btn-primary">Submit</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" id="newUser" class="brn btn-secondary" data-dismiss="modal">Create New User</button>
+        <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="newUser" class="brn btn-secondary">Create New User</button>
       </div>
     </div>
   </div>
