@@ -10,7 +10,7 @@
 }
 
 h1 {
-  font-family: 'Rammetto One', cursive;
+  font-family: 'Stalinist One', cursive;
 }
 
 .list-inline {
@@ -65,13 +65,20 @@ html, body {
   font-weight: bold;
 }
 
+#newCard {
+  height: 523.031px;
+  width: : 286px;
+  padding: 0px;
+  border-color: solid 1px orangeRed;
+}
+
 .btn {
   background-color: orangeRed;
   border-color: orangeRed;
   color: white;
 }
 
-#itemDesc {
+.card-text {
   height: 60px;
   overflow-y: scroll;
 }
