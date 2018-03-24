@@ -56,7 +56,7 @@ html, body {
 
 .card {
   border-color: orangeRed;
-  margin : 5px;
+  /*margin : 5px;*/
 }
 
 .card-header {
@@ -69,8 +69,10 @@ html, body {
   height: auto;
   width: : 286px;
   padding: 0px !important;
-  margin: 0px !important;
+  margin: 10px !important;
   border-color: solid 1px orangeRed;
+  display: inline-block;
+  width: 30%;
 }
 
 
@@ -97,6 +99,7 @@ img {
   padding: 0px !important;
   margin: 0px !important;
   border-color: solid 1px orangeRed;
+  display : inline-block;
 }
 
 #image {
@@ -134,15 +137,6 @@ img {
 .nav-item {
   padding: 32px;
 }
-
-#newCard {
-    display: inline-block;
-    padding: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin bottom: 50px;
-    width: 30%;
-  }
 
 #newUser {
   display: none;

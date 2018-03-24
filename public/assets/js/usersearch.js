@@ -2,6 +2,8 @@ $(document).ready(function() {
 
   $('#submit').on('click', function(e) {
 
+    $('#results').empty();
+
     var searchResults = {
     item : $('#itemSearch').val().trim(),
     category : $('#category').val().trim(),
