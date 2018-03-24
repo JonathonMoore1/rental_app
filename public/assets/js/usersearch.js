@@ -32,7 +32,7 @@ $(document).ready(function() {
         var imgURL = data[i].imgURL;
         var owner = data[i].owner;
 
-        if (searchResults.location === location) {
+        if ((searchResults.location === location) || (searchResults.item === item) || (searchResults.category === category)){
           var newCard = $("<div>");
             newCard.addClass("card");
             newCard.attr("id", "newCard");
