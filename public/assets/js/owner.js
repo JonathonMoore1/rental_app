@@ -18,16 +18,48 @@ $(document).on('ready', function () {
       description: trimIfString($('#item-description').val())
     };
     console.log(newItem);
-    // $.ajax('/', {
-    //   type: 'GET'
-    // }).then(function() {
-    //   console.log('GET request made');
-    // })
+
     $.ajax('/api/rentals', {
       type: 'post',
       data: newItem
     }).then(function () {
       console.log("*** NEW RENTAL ADDED ***");
+      var newOwnerCard = $("<div>");
+            newOwnerCard.addClass("card");
+            newOwnerCard.attr("id", "newOwnerCard");
+      // var newImg = $("<img>");
+      //   newImg.addClass("card-img-top");
+      //   newImg.attr("src", imgURL);
+      var cardTitle = $("<h4>");
+        cardTitle.addClass("card-title");
+          cardTitle.append(newItem.item);
+      var newUL = $("<ul>");
+        newUL.addClass("list-group list-group-flush");
+      var description = $("<li>");
+        description.addClass("list-group-item");
+        description.attr("id", "describe");
+          description.html(newItem.description);
+      var cat = $("<li>");
+        cat.addClass("list-group-item");
+          cat.html(newItem.category);
+      var ra = $("<li>");
+        ra.addClass("list-group-item");
+          ra.html(newItem.rate);
+      var loc = $("<li>");
+        loc.addClass("list-group-item");
+          loc.html(newItem.location);
+      newUL.append(description, cat, ra, loc);
+      newOwnerCard.append(cardTitle, newUL);
+      $('#ownerResults').append(newOwnerCard);
+
+
+      $.ajax({
+        url : "/api/rental/",
+        method : "GET"
+      }).then(function(data) {
+        console.log(data);
+        console.log(newItem.username);
+      })
     })
   });
 });
@@ -37,7 +69,7 @@ $('.modal').modal('show');
 $("#submit-modal").on('click', function() {
   console.log("CLICKED!");
 
-var userName = $('#userName').val().trim();
+var userName = $('#userNameOne').val().trim();
 console.log(userName);
 
 $.ajax({
