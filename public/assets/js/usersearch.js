@@ -109,7 +109,7 @@ function onClickEvent () {
       });
 
       $('#yes').on('click', function() {
-        $('#title').html("Sucess! This item has Been Rented!").css("color", "red");
+        $('#title').html("Sucess! A Request to Rent Has Been Sent To Owner!").css("color", "red");
         $('#yes').css("display", "none");
         $('#no').css("display", "none");
         $('#back').css("display", "inline-block");
