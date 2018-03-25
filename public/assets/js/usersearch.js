@@ -4,6 +4,8 @@ $(document).ready(function() {
 
     $('#results').empty();
 
+
+    //gather search parameters
     var searchResults = {
     item : $('#itemSearch').val().trim(),
     category : $('#category').val().trim(),
@@ -18,7 +20,7 @@ $(document).ready(function() {
     e.preventDefault();
     
 
-
+    //ajax GET request for search results
     $.ajax({
       url : "/api/rental/",
       method: "GET"
@@ -34,9 +36,11 @@ $(document).ready(function() {
         var imgURL = data[i].imgURL;
         var owner = data[i].owner;
 
+
+        //generate search query cards
         if ((searchResults.location === location) || (searchResults.item === item) || (searchResults.category === category)){
           var newCard = $("<div>");
-            newCard.addClass("card");
+            newCard.addClass("card newCard");
             newCard.attr("id", "newCard");
           var newImg = $("<img>");
             newImg.addClass("card-img-top");
@@ -62,14 +66,71 @@ $(document).ready(function() {
           var na = $("<li>");     
             na.addClass("list-group-item");
               na.html(owner);
+          var button = $("<button>");
+            button.addClass("btn btn-primary mb-2 rentItem");
+            //button.attr("id", "rentItem");
+            button.html("Rent This Item");
           newUL.append(describe, cat, ra, loc, na);
-          newCard.append(newImg, cardTitle, newUL);
+          newCard.append(newImg, cardTitle, newUL, button);
           $('#results').append(newCard);
+          onClickEvent();
+
+
+
+
+
         }
       }
       
       // //console.log(data);
 
     });
+
+
   });
+
+
 });
+
+function onClickEvent () {
+
+  $('.rentItem').on('click', function() {
+    console.log("clicked");
+    $('#confirmRentModal').css("display", 'block');
+    $('#mainCard').css("display", "none");
+    $('.newCard').css("display", "none");
+    $('body').css("background", "rgba(0,0,0,.5)" ); 
+
+      $('#no').on('click', function() {
+        $('#confirmRentModal').css("display", "none");
+        $('#mainCard').css("display", "flex");
+        $('.newCard').css("display", "inline-block")
+        $('body').css("background", "");
+      });
+
+      $('#yes').on('click', function() {
+        $('#title').html("Sucess! This item has Been Rented!").css("color", "red");
+        $('#yes').css("display", "none");
+        $('#no').css("display", "none");
+        $('#back').css("display", "inline-block");
+      });
+
+      $('#back').on('click', function() {
+        $('#confirmRentModal').css("display", "none");
+        $('#mainCard').css("display", "flex");
+        $('#newCard').css("display", "inline-block");
+        $('#yes').css('display', "inline-block");
+        $("#no").css("display", "inline-block");
+        $('#title').html("Are You Sure You Want to Rent this Item?").css("color", "black");
+        $('#back').css("display", "none");
+        $('body').css("background", "");
+      });
+
+  });
+
+}
+
+function newCardGenerate() {
+
+}
+
