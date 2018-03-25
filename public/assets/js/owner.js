@@ -53,14 +53,8 @@ $(document).on('ready', function () {
       $('#ownerResults').append(newOwnerCard);
 
 
-      $.ajax({
-        url : "/api/rental/",
-        method : "GET"
-      }).then(function(data) {
-        console.log(data);
-        console.log(newItem.username);
-      })
-    })
+    
+    });
   });
 });
 

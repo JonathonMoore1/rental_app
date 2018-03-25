@@ -2,10 +2,22 @@
 <script src="../../public/assets/js/usersearch.js"></script>
 <body class="renter">
 
-<div class="row">
+<div class = "row">
+	<div class="card" id="confirmRentModal">
+		<h4 id="title" class="card-title">Are You Sure You Want to Rent this Item?</h4>
+		<br><br>
+		<button id="yes" class= "btn btn-primary mb-2" type="submit">Yes</button>
+		<button id="no" class= "btn btn-primary mb-2" data-dismiss="confirmRentalModal" type="submit">No</button>
+		<button id="back" class= "btn btn-primary mb-2" type="submit">Back To Results</button>
+	</div>
+</div>
+	
+
+
+<div class="row" id="mainSection">
 	<div class="col-md-2"></div>
 	<div class="col-md-8">
-	<div class="card">
+	<div class="card" id="mainCard">
 	  <div class="card-body">
 	    <h2>Welcome! What are You Searching For Today?</h2>
 	    <br>

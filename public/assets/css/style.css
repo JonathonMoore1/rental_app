@@ -29,6 +29,7 @@ body {
 	background-size: 50%, 50%, 50%, 50%;
 	background-attachment: fixed, fixed, fixed, fixed;
 	background-position: left top, right top, right bottom, left bottom;
+
 }
 
 .home {
@@ -143,5 +144,34 @@ img {
 }
 
 #newUserInput {
+  display: none;
+}
+
+#confirmRentModal {
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 60%;
+  padding: 50px;
+  display: none;
+}
+
+#yes {
+  width: 30%;
+  margin: 10px;
+  align-items: center;
+}
+
+#no {
+  width: 30%;
+  margin: 10px;
+}
+
+#back {
+  width: 30%;
+  margin: 10px;
   display: none;
 }
