@@ -31,19 +31,6 @@ var orm = {
             }
         );
     },
-
-    // selectOne: function(table, objColVals, condition, cb) {
-    //     var queryString = 'SELECT * FROM ' + table;
-    //     queryString += objToSql(objColVals);
-    //     queryString += " WHERE ";
-    //     queryString += condition;
-    //     console.log(queryString);
-    //     connection.query(queryString, function(err, result) {
-    //         if(err) {
-    //             throw err;
-    //         } cb(result);
-    //     });
-    // },
     insertOne: function(table, username, item, rate, owner, location, category, description, cb) {
         console.log('insertOne called')
         var queryString = "INSERT INTO `" + table + "` (" + 
@@ -96,5 +83,4 @@ var orm = {
         });
     }
 };
-
 module.exports = orm;

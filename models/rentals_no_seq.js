@@ -1,6 +1,5 @@
 // Import ORM from orm.js
 var orm = require('../config/orm.js');
-
 // ORMs
 var rentals = {
     selectAll: function(cb) {
@@ -8,11 +7,6 @@ var rentals = {
             cb(res);
         });
     },
-    // selectOne: function(table, condition, cb) {
-    //     orm.selectOne('Rentals', condition, function(res) {
-    //         cb(res);
-    //     });
-    // },
     insertOne: function(username, item, rate, owner, location, category, description, cb) {
         orm.insertOne('Rentals', username, item, rate, owner, location, category, description, function(res) {
             cb(res);
@@ -34,6 +28,5 @@ var rentals = {
         });
     }
 };
-
 // Export ORMs
 module.exports = rentals;

@@ -2,7 +2,6 @@ require('dotenv').config();
 var mysql = require('mysql2');
 var pw = process.env.MYSQL_PW;
 var connection;
-
 if (process.env.JAWSDB_URL) {
 	connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
@@ -14,12 +13,8 @@ if (process.env.JAWSDB_URL) {
 	  database: 'rentalApp_db'
 	});
 };
-
-
-
 connection.connect(function(err) {
   if (err) throw err;
   console.log("\nMYSQL CONNECTION SUCCESSFUL\n");
 });
-
 module.exports = connection;
