@@ -1,12 +1,10 @@
 $(document).on('ready', function () {
-
   $('#ownerSubmit').on('click', function (e) {
     e.preventDefault();
     // alert('button clicked!')
     function trimIfString(val) {
       return typeof val === 'string' ? val.trim() : val;
     }
-
     var newItem = {
       username: trimIfString($('#userName').val()),
       item: trimIfString($('#item-name').val()),
@@ -18,7 +16,6 @@ $(document).on('ready', function () {
       description: trimIfString($('#item-description').val())
     };
     console.log(newItem);
-
     $.ajax('/api/rentals', {
       type: 'post',
       data: newItem
@@ -51,24 +48,16 @@ $(document).on('ready', function () {
       newUL.append(description, cat, ra, loc);
       newOwnerCard.append(cardTitle, newUL);
       $('#ownerResults').append(newOwnerCard);
-
-
-    
     });
   });
 });
-
 $('.modal').modal('show');
-
 $("#submit-modal").on('click', function() {
-  // console.log("CLICKED!");
-
-var userName = $('#userNameOne').val().trim();
-console.log(userName);
-
-$.ajax({
-  url : "/api/rental/",
-  method: "GET"
+  var userName = $('#userNameOne').val().trim();
+  console.log(userName);
+  $.ajax({
+    url : "/api/rental/",
+    method: "GET"
   }).then(function(data) {
     console.log(data.length);
     for (i = 0; i < data.length; i++) {
@@ -84,34 +73,33 @@ $.ajax({
       if (userName === name) {
         $('.modal').modal('hide');
         var newOwnerCard = $("<div>");
-            newOwnerCard.addClass("card");
-            newOwnerCard.attr("id", "newOwnerCard");
-          var newImg = $("<img>");
-            newImg.addClass("card-img-top");
-            newImg.attr("src", imgURL);
-          var cardTitle = $("<h4>");
-            cardTitle.addClass("card-title");
-              cardTitle.append(item);
-          var newUL = $("<ul>");
-            newUL.addClass("list-group list-group-flush");
-          var description = $("<li>");
-            description.addClass("list-group-item");
-            description.attr("id", "describe");
-              description.html(describe);
-          var cat = $("<li>");
-            cat.addClass("list-group-item");
-              cat.html(category);
-          var ra = $("<li>");
-            ra.addClass("list-group-item");
-              ra.html(rate);
-          var loc = $("<li>");
-            loc.addClass("list-group-item");
-              loc.html(location);
+          newOwnerCard.addClass("card");
+          newOwnerCard.attr("id", "newOwnerCard");
+        var newImg = $("<img>");
+          newImg.addClass("card-img-top");
+          newImg.attr("src", imgURL);
+        var cardTitle = $("<h4>");
+          cardTitle.addClass("card-title");
+          cardTitle.append(item);
+        var newUL = $("<ul>");
+          newUL.addClass("list-group list-group-flush");
+        var description = $("<li>");
+          description.addClass("list-group-item");
+          description.attr("id", "describe");
+          description.html(describe);
+        var cat = $("<li>");
+          cat.addClass("list-group-item");
+          cat.html(category);
+        var ra = $("<li>");
+          ra.addClass("list-group-item");
+          ra.html(rate);
+        var loc = $("<li>");
+          loc.addClass("list-group-item");
+          loc.html(location);
           newUL.append(describe, cat, ra, loc);
           newOwnerCard.append(newImg, cardTitle, newUL);
           $('#ownerResults').append(newOwnerCard);
-      }
-      else {
+      }else {
         $('.modalInfo').html("Invalid username");
         $('#newUser').css("display", "block");
         //$('#newUserInput').css("display","block");
@@ -119,10 +107,9 @@ $.ajax({
     }
   });
 });
-
 $("#newUser").on('click', function() {
   $('#newUserInput').css("display", "block");
   $('#submit-modal').css("display", "none");
   $("#close").html("Create New User");
   $('#newUser').css("display", "none");
-})
+});

@@ -1,10 +1,8 @@
 var Nightmare = require("nightmare");
 var expect = require("chai").expect;
-
 describe("Renter Search", function() {
   // The default tests in mocha is 2 seconds.
   // Extending it to 30 seconds to have time to load the pages
-
   this.timeout(30000);
   it("should send user to the renter page", function(done) {
     // ID for the login button.
@@ -22,7 +20,6 @@ describe("Renter Search", function() {
         done();
       });
   });
-
   it("should present a form asking a user what recreation equipment they'd like to rent", function(done) {
     new Nightmare({ show: true })
       .goto("http://localhost:8080/renter")
@@ -42,7 +39,6 @@ describe("Renter Search", function() {
         done();
       });
   });
-
   it("should throw an error for fun", function() {
     throw new Error("Failed on purpose, just to make the Mocha output more interesting.");
   });

@@ -1,10 +1,6 @@
 $(document).ready(function() {
-
   $('#submit').on('click', function(e) {
-
     $('#results').empty();
-
-
     //gather search parameters
     var searchResults = {
     item : $('#itemSearch').val().trim(),
@@ -12,14 +8,9 @@ $(document).ready(function() {
     location : $('#locationSearch').val().trim(),
     dayFrom : $('#day').val().trim(),
     dayTo : $('#daytwo').val().trim()
-
     }
-
     console.log(searchResults);
-
     e.preventDefault();
-    
-
     //ajax GET request for search results
     $.ajax({
       url : "/api/rental/",
@@ -35,8 +26,6 @@ $(document).ready(function() {
         var rate = data[i].rate;
         var imgURL = data[i].imgURL;
         var owner = data[i].owner;
-
-
         //generate search query cards
         if ((searchResults.location === location) || (searchResults.item === item) || (searchResults.category === category)){
           var newCard = $("<div>");
@@ -74,47 +63,30 @@ $(document).ready(function() {
           newCard.append(newImg, cardTitle, newUL, button);
           $('#results').append(newCard);
           onClickEvent();
-
-
-
-
-
         }
       }
-      
-      // //console.log(data);
-
     });
-
-
   });
-
-
 });
-
 function onClickEvent () {
-
   $('.rentItem').on('click', function() {
     console.log("clicked");
     $('#confirmRentModal').css("display", 'block');
     $('#mainCard').css("display", "none");
     $('.newCard').css("display", "none");
     $('body').css("background", "rgba(0,0,0,.5)" ); 
-
       $('#no').on('click', function() {
         $('#confirmRentModal').css("display", "none");
         $('#mainCard').css("display", "flex");
         $('.newCard').css("display", "inline-block")
         $('body').css("background", "");
       });
-
       $('#yes').on('click', function() {
         $('#title').html("Sucess! A Request to Rent Has Been Sent To Owner!").css("color", "red");
         $('#yes').css("display", "none");
         $('#no').css("display", "none");
         $('#back').css("display", "inline-block");
       });
-
       $('#back').on('click', function() {
         $('#confirmRentModal').css("display", "none");
         $('#mainCard').css("display", "flex");
@@ -125,12 +97,8 @@ function onClickEvent () {
         $('#back').css("display", "none");
         $('body').css("background", "");
       });
-
   });
-
 }
-
 function newCardGenerate() {
-
 }
 
