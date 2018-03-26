@@ -2,7 +2,7 @@ $(document).on('ready', function () {
 
   $('#ownerSubmit').on('click', function (e) {
     e.preventDefault();
-    alert('button clicked!')
+    // alert('button clicked!')
     function trimIfString(val) {
       return typeof val === 'string' ? val.trim() : val;
     }
@@ -61,7 +61,7 @@ $(document).on('ready', function () {
 $('.modal').modal('show');
 
 $("#submit-modal").on('click', function() {
-  console.log("CLICKED!");
+  // console.log("CLICKED!");
 
 var userName = $('#userNameOne').val().trim();
 console.log(userName);
