@@ -7,7 +7,7 @@ describe("Renter Search", function() {
   it("should send user to the renter page", function(done) {
     // ID for the login button.
     Nightmare({ show: true })
-      .goto("localhost:8080")
+      .goto("https://rec-rentals.herokuapp.com")
       // Click the Renter link
       .click("a[href='/renter']")
       // Evaluate the title
@@ -16,13 +16,13 @@ describe("Renter Search", function() {
       })
       // Asset the title is as expected
       .then(function(title) {
-        expect(title).to.equal("Welcome! What are you searching for today?");
+        expect(title).to.equal("Rec-Rentals | Renter");
         done();
       });
   });
   it("should present a form asking a user what recreation equipment they'd like to rent", function(done) {
     new Nightmare({ show: true })
-      .goto("http://localhost:8080/renter")
+      .goto("https://rec-rentals.herokuapp.com/renter")
       // Enter search item.
       .type("#itemSearch", "SearchItem")
       // Enter location.
@@ -41,5 +41,5 @@ describe("Renter Search", function() {
   });
   it("should throw an error for fun", function() {
     throw new Error("Failed on purpose, just to make the Mocha output more interesting.");
-  });
+  // });
 });
