@@ -2,7 +2,7 @@
   "name": "rental_app",
   "version": "1.0.0",
   "description": "Group Project #2",
-  "main": "home.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha"
   },
