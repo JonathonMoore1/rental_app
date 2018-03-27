@@ -15,7 +15,7 @@ If you selected a renter, you are taken to the rental search page, where you can
 ![ScreenShot](public/assets/css/images/UserSearch.jpg)
 ![ScreenShot](public/assets/css/images/UserSearch_text.jpg)
 Once the search button is clicked, items that match the entered criteria will display below the search box.
-![ScreenShot]()
+![ScreenShot](public/assets/css/images/UserResults.jpg)
 
 Clicking the rent button will take you to a confirmation of page where you are asked "Are you sure you want to rent this item?"
 ![ScreenShot](public/assets/css/images/RentalConfirm.jpg)
@@ -45,7 +45,7 @@ After creating a new user or entering a valid username owners are taken to a for
 ![ScreenShot](public/assets/css/images/OwnerList_text.jpg)
 
 Once the list item button is clicked the information for the entered item is listed below the search form with all other items the owner has listed on the site.
-![ScreenShot]()
+![ScreenShot](public/assets/css/images/OwnerDisplay.jpg)
 
 ## NPMs Used
 This webapp requires the use of the following npms:
