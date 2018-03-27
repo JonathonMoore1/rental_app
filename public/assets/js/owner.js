@@ -17,7 +17,7 @@ $(document).on('ready', function () {
     };
     console.log(newItem);
     $.ajax('/api/rentals', {
-      type: 'post',
+      type: 'POST',
       data: newItem
     }).then(function () {
       console.log("*** NEW RENTAL ADDED ***");
