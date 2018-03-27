@@ -43,8 +43,7 @@ var orm = {
             function(err, res) {
                 if (err) throw err;
                 console.log(queryString);
-                cb(res);
-                
+                cb(res); 
             }
         );
     },
