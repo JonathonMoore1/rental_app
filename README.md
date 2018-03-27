@@ -26,11 +26,11 @@ Clicking yes leads to a request being sent to the owner. Click no returns the us
 
 ## 3. Owner View
 If you selected an owner, you are taken to the owner page where you are first prompted to enter your username.
-![Alt Text]()
+![ScreenShot](public/assets/css/images/OwnerSignin.jpg)
 
 If your username is not yet in the system, an invalid username message will appear along with a close button and a create new user button.
-If you selected an owner, you are taken to the owner page where you are first prompted to enter your username.
-![Alt Text]()
+![ScreenShot](public/assets/css/images/InvalidOwner.jpg)
+![ScreenShot](public/assets/css/images/CreateOwner.jpg)
 
 After creating a new user or entering a valid username owners are taken to a form to list their item with the following parameters:
 1. Username
@@ -41,10 +41,11 @@ After creating a new user or entering a valid username owners are taken to a for
 6. Item Description
 7. Location
 8. Dates Available
-![Alt Text]()
+![ScreenShot](public/assets/css/images/OwnerList.jpg)
+![ScreenShot](public/assets/css/images/OwnerList_text.jpg)
 
 Once the list item button is clicked the information for the entered item is listed below the search form with all other items the owner has listed on the site.
-![Alt Text]()
+![ScreenShot]()
 
 ## NPMs Used
 This webapp requires the use of the following npms:
